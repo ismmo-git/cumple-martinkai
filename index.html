@@ -20,22 +20,23 @@
             100% { background: linear-gradient(135deg, #ff8c00, #ff007f); }
         }
         .container {
-            margin-top: 50px;
+            margin-top: 20px;
             animation: fadeIn 2s ease-in-out;
+            padding: 10px;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
         }
         .countdown {
-            font-size: 80px;
+            font-size: 10vw;
             font-weight: bold;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
         }
         .image-container {
             margin-top: 20px;
             background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
+            padding: 10px;
             border-radius: 20px;
             animation: heartbeat 2s infinite;
         }
@@ -50,14 +51,14 @@
             border-radius: 10px;
         }
         .message {
-            font-size: 24px;
+            font-size: 5vw;
             margin-top: 20px;
             font-weight: bold;
             color: #ffeb3b;
         }
         .heart {
             color: #ff66cc;
-            font-size: 60px;
+            font-size: 12vw;
             animation: latido 1.5s infinite;
         }
         @keyframes latido {
@@ -80,7 +81,7 @@
         <h1>¡Cuenta Atrás para el Cumple!</h1>
         <div class="countdown" id="countdown"></div>
         <div class="image-container">
-            <img src="martinkai.jpg" alt="Imagen del Cumple" width="400px">
+            <img src="martinkai.jpg" alt="Imagen del Cumple">
         </div>
         <div class="message">
             ¡Que no se te pase, que el 7 de marzo está a la vuelta de la esquina!
@@ -111,17 +112,16 @@
             }
         }, 1000);
 
-        // Confetti infinito
         const confettiCanvas = document.getElementById("confetti");
         const confettiCtx = confettiCanvas.getContext("2d");
         confettiCanvas.width = window.innerWidth;
         confettiCanvas.height = window.innerHeight;
 
-        const particles = Array.from({ length: 200 }, () => ({
+        const particles = Array.from({ length: 400 }, () => ({
             x: Math.random() * confettiCanvas.width,
             y: Math.random() * confettiCanvas.height,
-            r: Math.random() * 6 + 2,
-            d: Math.random() * 10,
+            r: Math.random() * 10 + 4,
+            d: Math.random() * 15,
             color: `hsl(${Math.random() * 360}, 100%, 50%)`
         }));
 
@@ -132,12 +132,12 @@
                 confettiCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                 confettiCtx.fillStyle = p.color;
                 confettiCtx.fill();
-                p.y += p.d / 2;
+                p.y += p.d / 3;
                 if (p.y > confettiCanvas.height) p.y = -10;
             });
         }
 
-        setInterval(drawConfetti, 30);
+        setInterval(drawConfetti, 20);
     </script>
 </body>
 </html>
