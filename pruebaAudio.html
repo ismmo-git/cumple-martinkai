@@ -1,0 +1,14 @@
+<audio autoplay loop id="audioPlayer">
+    <source src="musica.mp3" type="audio/mp3">
+    Tu navegador no soporta audio HTML5.
+</audio>
+
+<script>
+    const audio = document.getElementById("audioPlayer");
+    audio.oncanplaythrough = function() {
+        console.log("La música se está cargando correctamente.");
+    };
+    audio.onerror = function() {
+        console.error("Error al cargar el archivo de música.");
+    };
+</script>
