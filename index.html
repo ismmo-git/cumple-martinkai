@@ -29,7 +29,7 @@
             to { opacity: 1; transform: scale(1); }
         }
         .countdown {
-            font-size: 10vw;
+            font-size: 5vw;
             font-weight: bold;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
         }
@@ -117,7 +117,7 @@
         confettiCanvas.width = window.innerWidth;
         confettiCanvas.height = window.innerHeight;
 
-        const particles = Array.from({ length: 400 }, () => ({
+        const particles = Array.from({ length: 100 }, () => ({
             x: Math.random() * confettiCanvas.width,
             y: Math.random() * confettiCanvas.height,
             r: Math.random() * 10 + 4,
