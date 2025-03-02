@@ -111,6 +111,7 @@
             100% { transform: scale(1); }
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -123,8 +124,8 @@
             ¡Que no se te pase, que el 7 de marzo está a la vuelta de la esquina!
         </div>
         <div class="heart">🚀🔥❤️🔥🚀</div>
-        <audio autoplay loop>
-            <source src="music.mp3" type="audio/mp3">
+        <audio id="audioPlayer" autoplay loop>
+            <source src="musica.mp3" type="audio/mp3">
             Tu navegador no soporta audio HTML5.
         </audio>
         <canvas class="confetti" id="confetti"></canvas>
@@ -174,6 +175,14 @@
         }
 
         setInterval(drawConfetti, 20);
-    </script>
+
+  
+    $(document).ready(function() {
+        // Asegúrate de que el audio se reproduzca cuando la página cargue
+        $('#audioPlayer')[0].play().catch(function(error) {
+            console.log('Error al reproducir el audio:', error);
+        });
+    });
+</script>
 </body>
 </html>
